@@ -50,7 +50,7 @@ let customStyled = [
 const formatter = new Intl.NumberFormat('id-ID', {
     style: 'currency',
     currency: 'IDR',
-  });
+});
 
 function setBaseUrl(url) {
     baseUrl = url;
@@ -436,13 +436,13 @@ function objectInfoWindow(id){
                 let lat = data.lat;
                 let lng = data.lng;
                 let type = data.type;
-                let price = (data.price == 0) ? 'Free' : 'Rp ' + data.price;
-                console.log(formatter.format(price))
+                let price = (data.price == 0) ? 'Free' : formatter.format(data.price);
+                
                 content =
                     '<div class="text-center">' +
                     '<p class="fw-bold fs-6">'+ name +'</p> <br>' +
                     '<p><i class="fa-solid fa-spa"></i> '+ type +'</p>' +
-                    '<p><i class="fa-solid fa-money-bill me-2"></i> '+ formatter.format(price) +'</p>' +
+                    '<p><i class="fa-solid fa-money-bill me-2"></i> '+ price +'</p>' +
                     '</div>';
                 
                 if(aid == "A0001") {
@@ -476,7 +476,7 @@ function objectInfoWindow(id){
                 let type = data.type;
                 // let lat = data.lat;
                 // let lng = data.lng;
-                let price = (data.price == 0) ? 'Free' : 'Rp ' + data.price;
+                let price = (data.price == 0) ? 'Free' : formatter.format(data.price);
 
                 content =
                     '<div class="text-center">' +
@@ -508,7 +508,7 @@ function objectInfoWindow(id){
                 // let lat = data.lat;
                 // let lng = data.lng;
                 let type_name = data.type_name;
-                let price = (data.price == 0) ? 'Free' : 'Rp ' + data.price;
+                let price = (data.price == 0) ? 'Free' : formatter.format(data.price);
 
                 content =
                     '<div class="text-center">' +
